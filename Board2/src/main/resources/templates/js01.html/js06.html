@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="button" value="버튼" id="Btn"> <br>
+   <input type="text" id="console">
+   <input type="button"  value="입력" id="go">
+    <script>
+        // 이벤트 처리 
+        // 뭔가 짓거리 = 이벤트
+        const btn = document.querySelector('#Btn');
+        btn.addEventListener('click', 
+        function (){
+            alert(111);
+            
+        }
+        );
+        
+
+        function test(){
+            alert(111);
+            
+            
+        }
+        // input 태그에 키보드로 값을 입력할 때마다 
+        // 입력한 값을 console에 출력 시키는 이벤트 코드를 작성
+        const Bts = document.querySelector('#console');
+        const go = document.querySelector('#go');
+        
+        go.addEventListener("keyup",function(){
+            console.log(Bts.value);
+        });
+
+        // 동기 통신(스프링+db)
+
+        // 비동기 통신 (디비랑 데이터 주고받기)
+
+         
+        
+
+    </script>
+    
+</body>
+</html>

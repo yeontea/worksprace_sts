@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <div><th:block th:if="${session.loginInfo != null}">
+        <h3>[[${session.loginInfo.memberName}]]님 반갑습니다.</h3>
+        <input type="button" value="로그아웃" onclick="location.href='/member/logout'" >
+        </th:block></div>
+    <div><th:block th:if="${session.loginInfo == null}">
+        
+         <a href="/member/login">로그인</a>
+        </th:block></div>
+        <div>
+            <form action="/board/list" method="post">
+            <select name="searchType" >
+                <option value="TITLE" th:selected="${searchVO.searchType==TITLE}">제목</option>
+                <option value="WRITER" th:selected="${searchVO.searchType==WRITER}">작성자</option>
+                 
+                
+                
+                <!-- 이전 list.html에서 제목을 선택했다면 -->
+                <!-- 새로 열리는 list.html에서는 제목이 선택 -->
+                <!-- 작성자를 선택했다면 작성자가 선택 -->
+               
+            </select>
+            <input type="text" name="searchValue" th:value="${searchVO.searchValue}">
+            <input type="submit" value="검색" >
+   
+        </form>
+        </div> 
+ 
+    <div><table>
+        <tr>
+            <td>글번호</td>
+            <td>제목</td>
+            <td>작성자</td>
+            <td>작성일</td>
+            <td>조회수</td>           
+        </tr>
+        <th:block th:each="select:${list}">
+
+        <tr>
+            <td>[[${select.boardNum}]]</td>
+            <td><a th:href="@{detail(boardNum=${select.boardNum})}">[[${select.title}]]</a></td>
+            <td>[[${select.writer}]]</td>
+            <td>[[${select.createDate}]]</td>
+            <td>[[${select.readCnt}]]</td>           
+        </tr>
+
+    </th:block>
+    <div>
+        <th:block th:if="${searchVO.prev}">
+            <a th:href="@{/board/list(nowPage=${searchVO.beginPage-1})}">이전</a> 
+        </th:block>
+    </div>
+
+    <div>
+        <th:block th:each="i : ${#numbers.sequence(searchVO.beginPage,searchVO.endPage)}">
+       <a th:href="@{/board/list(nowPage=${i})}">[[${i}]]</a> 
+    </th:block>
+    </div>
+    <div>
+        <th:block th:if="${searchVO.next}">
+           <a th:href="@{/board/list(nowPage=${searchVO.endPage+1})}">다음</a> 
+
+
+        </th:block>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </table></div>
+    <div><th:block th:if="${session.loginInfo!=null}">
+        <input type="button" th:value="글쓰기" onclick="goWrite()">
+        <script>
+            function goWrite(){
+                location.href='/board/insert'
+            }
+    
+    
+        </script>
+    </th:block></div>
+    
+
+</body>
+</html>

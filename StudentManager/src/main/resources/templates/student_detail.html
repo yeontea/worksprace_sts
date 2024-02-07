@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    [[${stuInfo.stuNo}]]<br>
+    [[${stuInfo.stuName}]]<br>
+    [[${stuInfo.engScore}]]<br>
+    [[${stuInfo.korScore}]]
+    [[${stuInfo.intro}]]
+
+    <a th:href="@{stuDelete(stuNo=${stuInfo.stuNo})}"><input type="button" value="학생삭제"></a>
+    
+
+</body>
+</html>

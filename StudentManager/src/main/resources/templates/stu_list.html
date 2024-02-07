@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 600px;
+            margin: 0 auto;
+        }
+        table{
+            border: 1px solid black;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr,td{
+            border: 1px solid black;
+        }
+        .btn-div{
+            text-align: center;
+            margin-top: 16px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+
+        <div class="container">
+            <div><table>
+                <div><tr>
+                    <td>학번</td>
+                    <td>학생명</td>
+                    <td>국어점수</td>
+                    <td>영어점수</td>
+                    <td>총점</td>
+                </tr></div>
+            <th:block th:each="student:${stuList}">
+                <div><tr>
+                    <td>[[${student.stuNo}]]</td>
+                    <td>
+                       <a th:href="@{stuDetail(stuNo=${student.stuNo})}">[[${student.stuName}]]</a>
+                    <td>[[${student.korScore}]]</td>
+                    <td>[[${student.engScore}]]</td>
+                    <td>[[${student.engScore}]]</td>
+                </tr></div>
+            </th:block>
+                
+
+
+            </table></div>
+            <div class="btn-div">
+                <input type="button" value="학생등록" onclick="goReg()">
+                
+            </div>
+            <script>
+             function goReg(){
+                location.href = 'regStu';
+             }
+            </script>
+
+
+
+
+
+    </div>
+
+
+</body>
+</html>

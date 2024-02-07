@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .head-div {
+            background-color: #333;
+            width: 100%;
+            font-size: 40px;
+            color: white;
+            height: 5vh;
+            margin: 0 auto;
+            
+
+
+        }
+
+        .head-text {
+            font-size: 12px;
+            margin-left: 65.7%;
+            display: inline-block;
+
+            position: absolute;
+            margin-top: 16px;
+        }
+        .menu{
+            height: 5vh;
+        }
+
+
+
+
+
+
+
+        .img-div {
+            width: 100%;
+            height: 90vh;
+            background-image: url(test_img.PNG);
+            background-size: cover;
+
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul, li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .menu .dep2 {
+            display: none;
+
+        }
+        .menu > ul {
+            padding: 12px 10px;
+        }
+        .menu .dep1 > li{
+            display: inline-block;
+            margin-left: 25px;
+            background: white;
+            text-align: center;
+            vertical-align: top;
+        }
+        .menu .dep1 > li > a {
+            display: block;
+        }
+        .menu .dep1 > li:hover > .dep2 {
+            display: block;
+
+        }
+        .menu .dep2 a {
+            display: block;
+            padding: 10px 0px;
+        }
+        .menu > ul > li > ul {
+           width: 150px;
+        }
+        .a-pants:hover{
+
+            font-weight: bolder; 
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head-div" style="position: relative;">
+            <span style="margin-left: 12.1%;  position: absolute; font-size: 34px; "> <span
+                    style="font-weight: bolder;">STYLE</span><span style="font-weight:lighter;">MAN</span></span>
+            <span><input type="text"
+                    style="height: 25px; width: 290px; position:absolute; margin-top: 10.5px; margin-left: 23%;"></span>
+            <span class="head-text">즐겨찾기 | 로그인 | <span style="cursor: pointer;"
+                    onclick="location.href='/content/join.html'">회원가입</span> | 장바구니 | 주문조회 | 고객센터</span>
+        </div>
+
+        <div class="menu">
+            <ul class="dep1">
+                <li ><a href="#" style="color: #49028d; margin-left: 330px;">BEST</a></li>
+                <li ><a href="#" style="color: #49028d;">NEW 5%</a></li>
+                <li><a href="#">OUTER</a></li>
+                <li><a href="#">SUIT</a></li>
+                <li>
+                    <a href="#" class="a-pants">PANTS</a>
+                    <ul class="dep2">
+                        <li><a href="#">슬랙스</a></li>
+                        <li><a href="#">면바지</a></li>
+                        <li><a href="#">밴딩 / 스판팬츠</a></li>
+                        <li><a href="#">청바지 / 데님</a></li>
+                        <li><a href="#">데미지진</a></li>
+                        <li><a href="#">기모팬츠</a></li>
+                        <li><a href="#">트레이닝</a></li>
+                        <li><a href="#">반바지</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">SHIRTS</a></li>
+                <li><a href="#" style=" color: #00ca74;">1+1</a></li>
+                <li><a href="#">KNIT/CARDIGAN</a></li>
+                <li><a href="#">SHOES</a></li>
+                <li><a href="#">BAG</a></li>
+                <li><a href="#">ACC</a></li>
+                <li><a href="#">BIG SIZE</a></li>
+                <li><a href="#">OUTLET</a></li>
+                <li><a href="#">GOLF WEAR</a></li>
+            </ul>
+        </div>
+        <div class="img-div">
+
+        </div> 
+    </div>
+</body>
+
+</html>

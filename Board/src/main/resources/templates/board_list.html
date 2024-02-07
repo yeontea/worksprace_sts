@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+    .a{
+        width:700;
+        margin: 0 auto;
+    }
+    table{
+        width: 100%;
+        border: 1px solid black;
+        border-collapse:collapse ;
+    }
+    tr,td{
+        border: 1px solid black;
+        text-align: center;
+    }
+    .btn{
+        text-align: center;
+    }
+
+</style>
+</head>
+<body>
+
+        <div class="a">
+            <table>
+                <tr>
+                    <td>글번호</td>
+                    <td>제목</td>
+                    <td>작성자</td>
+                    <td>작성일</td>
+                    <td>조회수</td>
+                </tr>
+                <tbody>
+                    <th:block th:if="${#lists.isEmpty(boardList)}" >
+                        <tr>
+                            <td colspan="5">
+                                입력된 값이 없습니다.
+                            </td>
+                        </tr>
+
+                    </th:block>
+                </tbody>
+
+                <th:block th:each="board : ${boardList}">
+                
+                <tr>
+                    <td>[[${board.boardNum}]]</td>
+                    <td><a th:href="@{Detail(boardNum=${board.boardNum})}">[[${board.boardTitle}]]</a></td>
+                    <td>[[${board.writer}]]</td>
+                    <td>[[${board.createDate}]]</td>
+                    <td>[[${board.readCnt}]]</td>
+                </tr>
+            </th:block>
+
+                
+
+            
+            </table>
+
+            <div class="btn"><input type="button" value="글쓰기" onclick="go()"></div>
+            <script>
+                function go(){
+                location.href = 'b'}
+            </script>
+
+
+
+
+
+
+
+
+        </div>
+
+
+</body>
+</html>

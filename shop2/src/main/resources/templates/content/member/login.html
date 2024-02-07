@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{fragment/user_layout}">
+
+<th:block layout:fragment="content_css">
+  <!-- html 파일이 열릴 때 같이 실행되는 css -->
+  <!-- <link rel="stylesheet" href="/"> -->
+</th:block>
+
+<th:block layout:fragment="contentFragment">
+
+  <div class="container">
+    <form action="/member/login" method="post" id="loginForm">
+
+
+    <div class="row justify-content-center">
+    <div class="col-4">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="memberId" placeholder="name@example.com" name="memberId">
+        <label for="memberId" style="font-size: 0.8rem;">Input your ID</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="memberPw" placeholder="Password" name="memberPw">
+        <label for="memberPw" style="font-size: 0.8rem;">Input your Password</label>
+      </div>
+      <div class="d-grid mb-3">
+        <input type="button" value="Login" class="btn btn-dark" onclick="loginStart()">
+      </div>
+      <div class="d-grid">
+        <input type="button" value="비동기 로그인" class="btn btn-dark" onclick="login()">
+      </div>
+    </div>
+
+   </div>
+  </form>
+  </div>
+  
+  <script src="/js/content/member/login.js"></script>
+   
+
+
+</th:block>
+
+<th:block layout:fragment="content_js">
+  <!-- html 파일이 열릴 때 같이 실행되는 js -->
+  <script src="/js/content/member/login.js"></script>
+</th:block>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <form action="">
+        <div><table>
+            <tr>
+                <td>글번호</td>
+                <td>[[${bDetail.boardNum}]]</td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td>[[${bDetail.title}]]</td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>[[${bDetail.writer}]]</td>
+            </tr>
+            <tr>
+                <td>시간</td>
+                <td>[[${bDetail.createDate}]]</td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>[[${bDetail.content}]]</td>
+            </tr>
+
+
+
+
+
+        </table>
+        
+        <div><input type="button" value="뒤로가기" onclick="location.href='/board/list'"></div>
+
+        <div><th:block th:if="${session.loginInfo!=null}">
+            <th:block th:if="${session.loginInfo.memberId== bDetail.writer or session.loginInfo.isAdmin == 'Y'}">
+            <input type="button" value="삭제" th:onclick="goDelete([[${bDetail.boardNum}]])"> 
+            <input type="submit" value="수정"></th:block></th:block></div>
+            
+            <script>
+                var a; // 기존에 쓰던 변수 선언 문법
+                var aa = 10;
+                var bb = 'java';
+                // 추천하는 방식
+                const b = 10; // 변하지 않는 값을 저장할 때 사용
+                // b = 20; -> 오류 발생
+
+                let c = 10;// 변하는 값을 저장할 때 사용
+                c = 20;
+
+                    const num1 = 10;
+                    const num2 = 20;
+                    const name = '홍'
+                    console.log('안녕하세요~');
+                    console.log(name + '님안녕하세요' + '국어점수는' + num1 + '영어점수는' + num2 + '입니다.')
+                    // 빽틱
+                    console.log(`${name}이라는 사람은 국어점수가 ${num1} 영어점수가 ${num2}입니다.`)
+
+                function goDelete(boardNum){
+                    // location.href = 'board/delete?boardNum='+ boardNum;
+                    location.href = `/board/delete?boardNum=${boardNum}`;
+                    
+
+                    
+                }
+
+
+            </script>
+            
+    </form>
+    <th:block th:if="${session.loginInfo!=null}">
+    <form action="/board/replayInsert" method="post">
+        <div><input type="text" name="content"></div>
+        <div><input type="hidden" name="boardNum" th:value="${bDetail.boardNum}"></div>
+        <input type="submit" value="등록">
+
+    </form>
+    
+<th:block th:each="replay:${list}">
+<table>
+    
+    <tr>
+        <td>[[${replay.writer}]]</td>
+        <td>[[${replay.content}]]</td>
+        <td>[[${replay.createDate}]]</td>
+        <td><th:block th:if="${replay.writer == session.loginInfo.memberId}">
+            <input type="button" value="삭제" th:onclick="goDelete([[${replay.replayNum}]],[[${replay.boardNum}]])">
+            <script>
+                function goDelete(rep,bn){
+                    location.href=`/board/deleteRep?replayNum=${rep}&boardNum=${bn}`;
+
+                }
+
+            </script>
+
+
+        </th:block></td>
+    </tr>
+   
+</table>
+</th:block>
+
+
+</div>
+</body>
+</html>

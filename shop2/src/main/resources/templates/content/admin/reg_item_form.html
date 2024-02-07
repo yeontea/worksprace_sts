@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{fragment/admin_layout}">
+
+<th:block layout:fragment="content_css">
+  <!-- html 파일이 열릴 때 같이 실행되는 css -->
+  <!-- <link rel="stylesheet" href="/"> -->
+</th:block>
+
+<th:block layout:fragment="contentFragment">
+  <!-- html 코드 작성 -->
+  <div class="container">
+    <div class="row">
+
+      <form action="/admin/insert" method="post" enctype="multipart/form-data">
+        <fieldset>
+
+
+
+
+          <div class="mb-3">
+            <label for="disabledSelect" class="form-label">카테고리</label>
+            <select id="disabledSelect" class="form-select" name="cateCode">
+              <option th:each="category:${cateData}" th:value="${category.cateCode}">[[${category.cateName}]]</option>
+
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">상품명</label>
+            <input type="text" id="disabledTextInput" class="form-control" name="itemName">
+          </div>
+          <div class="mb-3">
+            <label for="disabledTextInput" class="form-label">가격</label>
+            <input type="text" id="disabledTextInput" class="form-control" name="itemPrice">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">상품 소개</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="itemIntro"
+              style="resize: none;"></textarea>
+          </div>
+          
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="img1">
+            
+          </div>
+         
+          <div class="input-group mb-3">
+            <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" name="img2" multiple>
+            
+          </div>
+
+          <button type="submit" class="btn btn-primary"
+            style="margin: 0 auto; background-color: rgba(0, 0, 0, 0.836); padding: 10px; width: 30%;"><svg
+              xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+              class="bi bi-calendar-plus-fill" viewBox="0 0 16 16">
+              <path
+                d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M8.5 8.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5a.5.5 0 0 1 1 0" />
+            </svg> 상품 등록</button>
+    </div>
+
+
+
+    </fieldset>
+    </form>
+  </div>
+
+  </div>
+</th:block>
+
+<th:block layout:fragment="content_js">
+  <!-- html 파일이 열릴 때 같이 실행되는 js -->
+  <!-- <script src="/"></script> -->
+</th:block>
+
+</html>

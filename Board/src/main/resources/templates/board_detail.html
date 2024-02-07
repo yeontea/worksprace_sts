@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <form action="/ub" method="post">
+    <input type="hidden" name="boardNum" th:value="${bd.boardNum}">
+    <input type="hidden" name="writer" th:value="${bd.writer}">
+    <input type="hidden" name="createDate" th:value="${bd.createDate}">
+    <input type="hidden" name="boardTitle" th:value="${bd.boardTitle}">
+    <input type="hidden" name="boardContent" th:value="${bd.boardContent}">
+    <div><table>
+        <tr>
+            <td>글번호</td>
+            <td>[[${bd.boardNum}]]</td>
+            <td>작성자</td>
+            <td>[[${bd.writer}]]</td>
+            <td>작성일</td>
+            <td>[[${bd.createDate}]]</td>
+        </tr>
+        <tr>
+            <td>제목</td>
+            <td>[[${bd.boardTitle}]]</td>
+        </tr>
+        <tr>
+            <td>내용</td>
+            <td>[[${bd.boardContent}]]</td>
+        </tr>
+
+        
+
+
+
+
+
+    </table></div>
+    <div>
+        <a th:href="@{delete}"><input type="button" value="삭제"></a>
+    </div>
+
+    <div><input type="submit" value="수정"></div>
+<!--        게시판(검색기능) + 회원기능(회원가입,로그인) + 댓글   -->
+<!--        게시판 정보 관리(board) , 회원 정보(board_member) , 댓글 정보(board_reply)-->
+</form>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 해당 파일에 모든 쿼리문을 작성 -->
+<mapper namespace="boardMapper">
+    <resultMap id="bo" type="com.green.Board.vo.BoardVO">
+        <result column="BOARD_NUM" property="boardNum" />
+        <result column="BOARD_TITLE" property="boardTitle" />
+        <result column="BOARD_CONTENT" property="boardContent" />
+        <result column="WRITER" property="writer" />
+        <result column="CREATE_DATE" property="createDate" />
+        <result column="READ_CNT" property="readCnt" />
+    </resultMap>
+<insert id="insertBoard">
+    INSERT INTO basic_board (
+     BOARD_NUM
+    ,BOARD_TITLE
+    ,BOARD_CONTENT
+    ,WRITER
+    ,CREATE_DATE
+    ,READ_CNT
+    )
+    VALUES (
+    #{boardNum}
+    ,#{boardTitle}
+    ,#{boardContent}
+    ,#{writer}
+    ,#{createDate}
+    ,#{readCnt}
+    )
+</insert>
+    <select id="selectBoard" resultMap="bo">
+        SELECT BOARD_NUM
+        ,BOARD_TITLE
+        ,BOARD_CONTENT
+        ,WRITER
+        ,CREATE_DATE
+        ,READ_CNT
+        FROM basic_board
+
+
+    </select><select id="selectDetail" resultMap="bo">
+        SELECT BOARD_NUM
+        ,BOARD_TITLE
+        ,BOARD_CONTENT
+        ,WRITER
+        ,CREATE_DATE
+        ,READ_CNT
+        FROM basic_board
+    WHERE BOARD_NUM = #{boardNum}
+
+
+
+    </select>
+    <delete id="deleteboard">
+        DELETE FROM basic_board
+        WHERE BOARD_NUM = #{boardNum}
+    </delete>
+        <update id="updateDetail">
+            UPDATE basic_board
+            SET
+            BOARD_TITLE = #{boardTitle}
+            ,  BOARD_CONTENT = #{boardContent}
+            WHERE BOARD_NUM = #{boardNum}
+
+
+
+
+
+
+
+        </update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

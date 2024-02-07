@@ -1,0 +1,156 @@
+.con{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse ;
+    text-align: center;
+}
+/* ' '  : 자손 태그*/
+ /* > : 자식 태그 */
+
+.con > tbody > tr , .con > tbody > tr > td{
+    border: 1px solid black;
+    height: 500px;
+    vertical-align: top;
+
+
+}
+#stu-list-table>thead{
+    color: #fafafa;
+    font-size: 30px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+ }
+ #stu-list-table{
+    margin: 0 auto;
+   margin-bottom: 40px;
+    border: 1px solid black;
+  border-radius: 10px;
+ }
+
+#stu-list-table>tbody{
+    background: white;
+    border-radius:3px;
+    border-collapse: collapse;
+    height: 320px;
+    margin: auto;
+    max-width: 600px;
+    padding:5px;
+    width: 100%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    animation: float 5s infinite;
+
+}
+#stu-list-table tr,#stu-list-table td{
+    border: 1px solid black;
+}
+/* hover : 마우스 올리면~ */
+
+#stu-list-table tr:hover{
+    background-color: hsl(0, 0%, 87%);
+
+
+}
+.stu-detail-div table{
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+    
+    text-align: center;
+    border-radius: 15px;
+}
+.stu-detail-div table tr, .stu-detail-div table td{
+    border: 1px solid black;
+}
+.stu-detail-div table > div:first-child{
+       margin-bottom: 30px;
+}
+#name-span:hover{
+    cursor: pointer; 
+}
+#classSelecter{
+    margin-bottom: 30px;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: rgb(255, 136, 127);
+    margin-top: 20px;
+    text-size-adjust: 20px;
+
+}
+#stu-list-table>thead {
+    padding:1.5em;
+    background-color:rgb(222, 135, 135) ;
+}
+
+
+#stu_detail_table>thead{
+    color: #fafafa;
+    font-size: 20px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+    padding:1.5em;
+    background-color:rgb(222, 135, 135)
+}
+#stu_detail_table2>thead{
+    color: #fafafa;
+    font-size: 20px;
+    font-weight: 400;
+    font-style:normal;
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    text-transform:uppercase;
+    padding:1.5em;
+    background-color:rgb(222, 135, 135)
+
+}
+.button-div{
+    margin-bottom: 30px;
+    border-radius: 15px;
+    margin-top: 20px;
+    
+}
+#stu_detail_table{
+    margin: 0 auto;
+   margin-bottom: 40px;
+    border: 1px solid black;
+  border-radius: 10px;
+}
+#stu_detail_table2{
+    margin: 0 auto;
+   margin-bottom: 40px;
+    border: 1px solid black;
+  border-radius: 10px;
+}
+#button-css{
+    color: #fafafa;
+    margin-bottom: 30px;
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: rgb(255, 136, 127);
+    margin-top: 20px;
+    text-size-adjust: 20px;
+}
+
+

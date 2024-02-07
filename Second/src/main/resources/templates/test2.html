@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <form action="final" method="post">
+        <input type="hidden" name="name" th:value="${resume.name}">
+        <input type="hidden" name="tel" th:value="${resume.tel}">
+<div>
+        <div><h1>이력서 정보</h1></div>
+        <div>학력</div>
+        <div><select name="school">
+            <option value="대졸">대졸</option>
+            <option value="대학졸업예정">대학졸업예정</option>
+            <option value="전문대졸">전문대졸</option>
+            <option value="고졸">고졸</option>
+        </select> <input type="text" name="schoola" placeholder="학교명"></div>
+        <div><span>지원구분</span> 
+            <input type="radio" name="aa" value="신입" checked>신입
+            <input type="radio" name="aa" value="경력" checked>경력
+        </div>
+        <div>자격정보</div>
+        <div>
+            <table>
+                <div>
+                <tr>
+                    <td>자격증명</td>
+                    <td>취득일자</td>
+                    <td>발행기관</td>
+                    
+                </tr>
+            </div>
+            <div>
+            
+                <tr>
+                    <td><input type="text" name="bb"></td>
+                    <td><input type="text" name="bb"></td>
+                    <td><input type="text" name="bb"></td>
+                    
+                </tr>
+            </div>
+
+            </table>
+        </div>
+        <div>경력정보</div>
+        <div>
+            <table>
+                <tr>
+                    <td>회사명</td>
+                    <td>담당업무</td>
+                    <td>경력기간</td>
+                    
+                </tr>
+                <tr>
+                    <td><input type="text" name="cc"></td>
+                    <td><input type="text" name="cc"></td>
+                    <td><input type="text" name="cc"></td>
+                    
+                    
+                </tr>
+
+            </table>
+        </div>
+        <div>자기소개</div>
+        <div> <textarea name="intro"  cols="30" rows="10"></textarea></div>
+        <div><input type="submit" value="등록"></div>
+    
+
+
+</div>
+    </form>
+
+</body>
+</html>
